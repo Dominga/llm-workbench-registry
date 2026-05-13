@@ -54,6 +54,12 @@ sync.
   listed.
 - `preview` — short snippet shown in the registry browser before the
   user installs. ~500 chars max; longer strings are truncated.
+- `default_install` — optional bool. When `true`, the Workbench
+  auto-installs the artifact the first time it subscribes to the
+  source (only if the destination files don't already exist on disk,
+  so upgrades from a previous app version are never clobbered). The
+  official `agent` / `auto-edit` / `research` modes set this so new
+  users get a working set out of the box.
 
 ## Mode files
 

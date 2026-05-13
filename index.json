@@ -1,7 +1,79 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-05-13T20:00:25Z",
+  "updated_at": "2026-05-13T20:17:58Z",
   "artifacts": [
+    {
+      "type": "mode",
+      "id": "agent",
+      "version": "1.0.0",
+      "sha256": "4568fbea2da524c8136b064aeea5fc156b3ef0c88b179ecf78df0b1ce5b135e0",
+      "files": [
+        {
+          "path": "agent.toml",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/agent/agent.toml"
+        },
+        {
+          "path": "agent.system.md",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/agent/agent.system.md"
+        }
+      ],
+      "description": "Full toolset. User confirms each write via a diff modal.",
+      "tags": [
+        "official"
+      ],
+      "recommended_for": [],
+      "author": "Dominga",
+      "default_install": true,
+      "preview": "You are an autonomous agent working in **{{project.name}}** ({{project.path}}).\n\nUse the tools to inspect the project, propose edits, and explain changes before\nwriting. Each `edit_file` and `make_directory` call is reviewed by the user via\nan approval modal before it lands \u2014 be specific about what you're changing and\nwhy. Use `make_directory` to set up folder structure (e.g. `world/characters/`,\n`scenes/act-1/`) before writing files into new paths.\n\nWhen something is worth remembering across tu"
+    },
+    {
+      "type": "mode",
+      "id": "auto-edit",
+      "version": "1.0.0",
+      "sha256": "9999265eacb18cc45bbb6b92e9df09626379b5b1e1646552540ffb45d021c11a",
+      "files": [
+        {
+          "path": "auto-edit.toml",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/auto-edit/auto-edit.toml"
+        },
+        {
+          "path": "auto-edit.system.md",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/auto-edit/auto-edit.system.md"
+        }
+      ],
+      "description": "Full toolset, no per-edit confirmation. Pre-loop git snapshot lets the user revert.",
+      "tags": [
+        "official"
+      ],
+      "recommended_for": [],
+      "author": "Dominga",
+      "default_install": true,
+      "preview": "You are an autonomous agent in **{{project.name}}**.\n\nMake the edits you think are needed. The runtime has already snapshotted the\nworking tree with `git commit`, so the user can revert at any time.\n\nExplain the plan briefly, then act. Prefer small, focused commits-worth of\nedits per turn over giant rewrites. Use `make_directory` when you need a new\nfolder before writing files into it.\n\nUse `append_memory` to record durable facts the user shouldn't have to repeat\n(style preferences \u2192 global; pro"
+    },
+    {
+      "type": "mode",
+      "id": "research",
+      "version": "1.0.0",
+      "sha256": "aaa0c0edc7cc03dc647563074a9b030e94abbcd123ebf958b7efa8e19eb34595",
+      "files": [
+        {
+          "path": "research.toml",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/research/research.toml"
+        },
+        {
+          "path": "research.system.md",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/research/research.system.md"
+        }
+      ],
+      "description": "Read-only investigation. Searches and reads project content; never writes.",
+      "tags": [
+        "official"
+      ],
+      "recommended_for": [],
+      "author": "Dominga",
+      "default_install": true,
+      "preview": "You are a careful research assistant for the project **{{project.name}}**.\n\nUse the available tools to search and read project content before answering.\nCite the file paths you read in your response. Never edit anything.\n"
+    },
     {
       "type": "mode",
       "id": "worldbuilder",
@@ -29,6 +101,7 @@
         "llama3"
       ],
       "author": "Dominga",
+      "default_install": false,
       "preview": "You are a worldbuilding collaborator working in **{{project.name}}**\n({{project.path}}).\n\nHelp the user develop a fictional world: characters, locations, factions,\ntimelines, lore. Lean on the existing project content via `search_semantic`\nand `read_file` before inventing \u2014 consistency with what already exists\nmatters more than novelty.\n\nWhen something is worth remembering across sessions \u2014 a settled lore fact,\na recurring style choice, a name spelling the user keeps correcting \u2014\nrecord it with "
     },
     {
@@ -44,7 +117,8 @@
       ],
       "description": "Qwen3 fine-tunes specialised for code generation (Qwen3-Coder, Qwen2.5-Coder). Same ChatML template as base Qwen3; sampling skews lower for tighter completions.",
       "tags": [],
-      "author": ""
+      "author": "",
+      "default_install": false
     }
   ]
 }

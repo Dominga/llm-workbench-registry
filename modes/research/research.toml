@@ -1,0 +1,14 @@
+id = "research"
+name = "Research"
+color = "#22c55e"
+desc = "Read-only investigation. Searches and reads project content; never writes."
+version = "1.0.0"
+default_install = true
+
+system_prompt_template = "research.system.md"
+tool_whitelist = ["search_semantic", "read_file", "list_files", "read_memory"]
+approval = "auto"
+context = "rag-auto"
+
+tags = ["official"]
+author = "Dominga"

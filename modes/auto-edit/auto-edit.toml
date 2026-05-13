@@ -1,0 +1,14 @@
+id = "auto-edit"
+name = "Auto-edit"
+color = "#f59e0b"
+desc = "Full toolset, no per-edit confirmation. Pre-loop git snapshot lets the user revert."
+version = "1.0.0"
+default_install = true
+
+system_prompt_template = "auto-edit.system.md"
+tool_whitelist = ["search_semantic", "read_file", "list_files", "edit_file", "make_directory", "read_memory", "append_memory"]
+approval = "snapshot"
+context = "rag-explicit"
+
+tags = ["official"]
+author = "Dominga"

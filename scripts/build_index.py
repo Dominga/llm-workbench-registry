@@ -70,6 +70,7 @@ def _mode_artifact(dir_: Path) -> dict:
         "tags": list(meta.get("tags") or []),
         "recommended_for": list(meta.get("recommended_for") or []),
         "author": meta.get("author", ""),
+        "default_install": bool(meta.get("default_install", False)),
         "preview": preview,
     }
 
@@ -94,6 +95,7 @@ def _family_artifact(dir_: Path) -> dict:
         "description": meta.get("description", ""),
         "tags": list(meta.get("tags") or []),
         "author": meta.get("author", ""),
+        "default_install": bool(meta.get("default_install", False)),
     }
 
 
