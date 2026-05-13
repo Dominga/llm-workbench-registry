@@ -1,0 +1,14 @@
+id = "worldbuilder"
+name = "Worldbuilder"
+color = "#a855f7"
+desc = "Narrative worldbuilding helper. Tracks lore, characters, locations across sessions via append_memory; never edits files unless asked."
+version = "0.1.0"
+
+system_prompt_template = "worldbuilder.system.md"
+tool_whitelist = ["search_semantic", "read_file", "list_files", "read_memory", "append_memory"]
+approval = "auto"
+context = "rag-explicit"
+
+recommended_for = ["qwen3", "gemma3", "llama3"]
+tags = ["narrative", "worldbuilding", "rpg"]
+author = "Dominga"

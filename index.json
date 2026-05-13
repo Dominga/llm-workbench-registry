@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-05-13T19:59:55Z",
+  "artifacts": [
+    {
+      "type": "mode",
+      "id": "worldbuilder",
+      "version": "0.1.0",
+      "sha256": "2973a14045f55e948edba039c97952cd725de6f8c7e0dc8c4800519285125c8c",
+      "files": [
+        {
+          "path": "worldbuilder.toml",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/worldbuilder/worldbuilder.toml"
+        },
+        {
+          "path": "worldbuilder.system.md",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/modes/worldbuilder/worldbuilder.system.md"
+        }
+      ],
+      "description": "Narrative worldbuilding helper. Tracks lore, characters, locations across sessions via append_memory; never edits files unless asked.",
+      "tags": [
+        "narrative",
+        "worldbuilding",
+        "rpg"
+      ],
+      "recommended_for": [
+        "qwen3",
+        "gemma3",
+        "llama3"
+      ],
+      "author": "Dominga",
+      "preview": "You are a worldbuilding collaborator working in **{{project.name}}**\n({{project.path}}).\n\nHelp the user develop a fictional world: characters, locations, factions,\ntimelines, lore. Lean on the existing project content via `search_semantic`\nand `read_file` before inventing \u2014 consistency with what already exists\nmatters more than novelty.\n\nWhen something is worth remembering across sessions \u2014 a settled lore fact,\na recurring style choice, a name spelling the user keeps correcting \u2014\nrecord it with "
+    },
+    {
+      "type": "family",
+      "id": "qwen3-coder",
+      "version": "0.1.0",
+      "sha256": "0a25e7bebeb0cdc45676eab0cc9d74219a7c0dafe5a6168f77a221c4f2925493",
+      "files": [
+        {
+          "path": "qwen3-coder.toml",
+          "url": "https://raw.githubusercontent.com/Dominga/llm-workbench-registry/main/families/qwen3-coder/qwen3-coder.toml"
+        }
+      ],
+      "description": "Qwen3 fine-tunes specialised for code generation (Qwen3-Coder, Qwen2.5-Coder). Same ChatML template as base Qwen3; sampling skews lower for tighter completions.",
+      "tags": [],
+      "author": ""
+    }
+  ]
+}

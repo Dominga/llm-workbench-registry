@@ -1,0 +1,26 @@
+id = "qwen3-coder"
+name = "Qwen 3 Coder"
+description = "Qwen3 fine-tunes specialised for code generation (Qwen3-Coder, Qwen2.5-Coder). Same ChatML template as base Qwen3; sampling skews lower for tighter completions."
+version = "0.1.0"
+
+chat_template_hint = "chatml"
+reasoning_token = "<think>"
+
+[sampling_defaults]
+temperature = 0.2
+top_p = 0.95
+top_k = 20
+repeat_penalty = 1.05
+
+notes = """
+Coder fine-tunes prefer much lower temperature than chat variants —
+0.2-0.4 is the sweet spot for most production code generation. Bump
+to 0.7+ only when brainstorming.
+
+Supports native tool calling when llama-server is launched with --jinja.
+The <think> reasoning token is rarely used by Coder builds (most don't
+emit it), but the parser handles its absence cleanly.
+"""
+
+tags = ["coding"]
+author = "Dominga"
